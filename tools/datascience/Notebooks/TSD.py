@@ -20,15 +20,15 @@
 
 import pandas as pd
 
-#from os import listdir
-#from os.path import isfile, join
+from os import listdir
+from os.path import isfile, join
 #This could be improved as a way of locating the original data files
 #mypath = '../../../../../1000_Smiles/Data/'
 #print(listdir(mypath))
-
 #centralized location for file paths
-file_prefix = '../../../../../1000_Smiles/Data/tscharts-output/' #change to match location of your data
-
+#file_prefix = '../../../../../1000_Smiles/Data/tscharts-output/' #change to match location of your data
+file_prefix = '/Users/williamwilson/Dropbox/1000 Smiles/public/1000smiles/tools/datascience/data/'
+#file_prefix = '../data/'
 #individual data files in csv
 file_loc_clinic = file_prefix+'clinic_clinic-final.txt'
 file_loc_register = file_prefix+'register_register-final.txt'
@@ -46,9 +46,8 @@ df_clinic = df_clinic.iloc[N: , :]
 #merged dataframes - patients
 df_register = pd.read_csv(file_loc_register, encoding="latin-1", sep="__", engine ='python')
 df_merged = pd.merge(df_register, df_clinic, left_on="clinic_id", right_on="id")
-df_patient = pd.read_csv(file_loc_patient, encoding="latin-1", sep="__", engine="python")
+df_patient = pd.read_csv(file_loc_patient, encoding="latin-1", sep="|", engine="python")
 df_merged = pd.merge(df_patient, df_merged, left_on="id", right_on="patient_id")
-
 
 #clinic dataframes
 df_images = pd.read_csv(file_loc_images, encoding="latin-1", sep="__", engine="python")
