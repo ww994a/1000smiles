@@ -116,7 +116,7 @@ med_srs = df_medical[["cold_cough_fever", "hivaids", "anemia", "athsma", "cancer
 column_ = ["Cold Cough Fever", "HIV/AIDS", "Anemia", "Athsma",
             "Cancer", "Congenital Heart Defect", "Diabetes", "Epilepsy",
             "Bleeding Problems", "Hepititis", "Tuberculosis", "Trouble Speaking",
-            "Trouble Hearing", "Troubleeating", "Born With Cleft Lip", 
+            "Trouble Hearing", "Trouble Eating", "Born With Cleft Lip", 
              "Born With Cleft Palate","patient_id"]
 med_srs = med_srs.set_axis(column_, axis=1)
 
